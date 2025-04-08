@@ -147,12 +147,6 @@ This project is structured using the **3-layer architecture** pattern for separa
 - Custom middleware checks this flag before processing requests
 - All requests (except toggle route or Admins) are blocked when ON
 
-```csharp
-if (maintenanceMode && !context.User.IsInRole("Admin"))
-{
-    context.Response.StatusCode = 503;
-    await context.Response.WriteAsync("Service is under maintenance.");
-}
 
 
 
